@@ -1,4 +1,18 @@
-# RStudio
+# Credit Cards Fraud Detection Analysis
+
+## Overview 
+Credit card fraud detection is a critical issue faced by financial institutions, as fraud can lead to significant monetary losses. Using machine learning and statistical methods in R, my aims with this analysis is to detect fraudulent transactions by identifying patterns and anomalies in transaction data. The dataset was gotten from an open source website called (kaggle)[https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023]
+
+### Dataset 
+
+The dataset i used typically consists of various features, including transaction time, amount, and anonymized variables (e.g., V1, V2, ..., V28), derived using Principal Component Analysis (PCA).
+The target variable, "Class," indicates whether a transaction is fraudulent (1) or non-fraudulent (0).
+The dataset is highly imbalanced, with fraudulent transactions comprising a small percentage of the total
+
+![image](https://github.com/user-attachments/assets/1cad08c8-79fb-46b2-952c-3b9b8d53e99c)
+
+
+RStudio
 RStudio for Analysis
 ```R
 # CREDIT CARD FRAUD DECTATION
