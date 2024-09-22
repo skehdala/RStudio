@@ -1,7 +1,7 @@
 # Credit Cards Fraud Detection Analysis
 
 ## Overview 
-Credit card fraud detection is a critical issue faced by financial institutions, as fraud can lead to significant monetary losses. Using machine learning and statistical methods in R, my aims with this analysis is to detect fraudulent transactions by identifying patterns and anomalies in transaction data. The dataset was gotten from an open source website called (kaggle)[https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023]
+Credit card fraud detection is a critical issue faced by financial institutions, as fraud can lead to significant monetary losses. Using machine learning and statistical methods in R, my aims with this analysis is to detect fraudulent transactions by identifying patterns and anomalies in transaction data. The dataset was gotten from an open source website called [kaggle](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023)
 
 ### Dataset 
 
@@ -11,17 +11,10 @@ The dataset is highly imbalanced, with fraudulent transactions comprising a smal
 
 ![image](https://github.com/user-attachments/assets/1cad08c8-79fb-46b2-952c-3b9b8d53e99c)
 
+Since fraud cases are rare, balancing techniques like oversampling (SMOTE), undersampling, or adjusting class weights are applied.
 
-RStudio
-RStudio for Analysis
 ```R
-# CREDIT CARD FRAUD DECTATION
-# DATA670 - DATA ANALYTICS CAPSTONE PROJECT
-# STUDENT NAME - SEMA KEHDALA
-# PROFESSORS NAME - JON McKEEBY
-# ========================================
-
-#library needed for analysis
+#library needed for this analysis
 
 install.packages('caret')
 library(caret)
@@ -55,13 +48,13 @@ library(rpart.plot)
 
 install.packages('data.table')
 library(data.table)
-
-# --------------------------------------------------------
-
+```
+```R
 # opening the credit card file in R
 credit_card <- read.csv(file.choose(), header=TRUE, sep=",", as.is=FALSE)
-
-
+```
+### Viewing the structure and summary of the dataset
+```R
 #View structure of the data
 str(credit_card)
 
@@ -73,9 +66,9 @@ summary(credit_card)
 
 #count the missing values
 sum(is.na(credit_card))
-
+```
 # ----------------------------------------------------------
-
+```R
 #get the distribution of fraud and legitimate transactions
 table(credit_card$Class)
 
