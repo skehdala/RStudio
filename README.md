@@ -388,7 +388,7 @@ confusionMatrix(predicted_val, test_data$Class)
 
 #====================================================================
 
-# Method 2 Logistic Regression Model on test data
+## Method 2 Logistic Regression Model on test data
 
 ```R
 #import dataset in a function called data
@@ -522,7 +522,7 @@ auc.gb <- roc(test_data$Class, lr.predict, plot = TRUE, col = "green")
 ![image](https://github.com/user-attachments/assets/ea82b435-1b79-4c62-aeb9-52eadf9fbb09)
 
 ### Working on getting the Decision tree
-
+```R
 desicion_model <- rpart(Class ~ . , data, method = "class")
 predict_val <- predict(desicion_model, type = "class")
 probability <- predict(desicion_model, data, type = 'prob')
@@ -531,8 +531,12 @@ probability <- predict(desicion_model, data, type = 'prob')
 rpart.plot(desicion_model, main = "Decision Tree Visualization", 
            cex = 0.5, 
            under.cex = 0.2)
+```
+![image](https://github.com/user-attachments/assets/d785c514-1e5d-4664-9567-a8b1a62ffb57)
 
-#Working on getting the Neural Network NN (it took lots of time for the NN)
+### Working on getting the Neural Network NN (it took lots of time for the NN)
+
+```R
 library(neuralnet)
 
 # Prepare the training data
@@ -543,14 +547,18 @@ train_data <- data.frame(
   Feature3 = rnorm(100),
   Feature4 = rnorm(100),
   Class = sample(0:1, 100, replace = TRUE))
-
+```
+```R
 # Train the neural network model with 18 hidden neurons 3 hidden layers
 NN_model <- neuralnet(Class ~., data = train_data, 
                       hidden = c(6, 6, 6), linear.output = FALSE)
 
 # Plot the neural network model
 plot(NN_model)
+```
+![image](https://github.com/user-attachments/assets/d07d6083-ad77-48de-9bc5-95382b0d0222)
 
+```R
 # clear environment
 rm(list=ls())
 ```
