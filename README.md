@@ -12,7 +12,9 @@ The dataset is highly imbalanced, with fraudulent transactions comprising a smal
 ![image](https://github.com/user-attachments/assets/1cad08c8-79fb-46b2-952c-3b9b8d53e99c)
 
 Since fraud cases are rare, balancing techniques like oversampling (SMOTE), undersampling, or adjusting class weights are applied.
+Below are some of the packages needed in this project.
 
+### Packages used
 ```R
 #library needed for this analysis
 
@@ -49,21 +51,40 @@ library(rpart.plot)
 install.packages('data.table')
 library(data.table)
 ```
+### Reading CSV file in RStudio
+The are several ways to open CSV file in RStudio, 
+i used the first opetion as it will open the file same as excel without converting factors to characters.
 ```R
-# opening the credit card file in R
+# opening the credit card file in R without converting factors to characters
 credit_card <- read.csv(file.choose(), header=TRUE, sep=",", as.is=FALSE)
+
+# open a csv file in R while converting factors to characters
+credit_card <- read.csv(file.choose(), header=T)
+````
+If required, this command reomve the ID column from dataset called credit_card.
+```R
+#If required, this command reomve the ID column from dataset called credit_card.
+credit_card <- credit_card[, -which(names(credit_card) == "ID")]
 ```
+![image](https://github.com/user-attachments/assets/1cad08c8-79fb-46b2-952c-3b9b8d53e99c)
+
 ### Viewing the structure and summary of the dataset
 ```R
 #View structure of the data
 str(credit_card)
-
+```
+![image](https://github.com/user-attachments/assets/03c0dfdb-658f-4eb8-905e-eb58ebe8163e)
+```R
 #convert class to factor variable
 credit_card$Class <- factor(credit_card$Class, levels = c(0,1))
-
+```
+```R
 #get the summary of data
 summary(credit_card)
+```
+![image](https://github.com/user-attachments/assets/653f474c-c858-4e0a-8644-3a1b55255ff8)
 
+```R
 #count the missing values
 sum(is.na(credit_card))
 ```
@@ -71,10 +92,16 @@ sum(is.na(credit_card))
 ```R
 #get the distribution of fraud and legitimate transactions
 table(credit_card$Class)
+```
+![image](https://github.com/user-attachments/assets/58be22f1-91b5-4606-afa2-02adb7a63f42)
 
+```R
 #get the percentage of fraud and legit transaction
 prop.table(table(credit_card$Class))
+```
+![image](https://github.com/user-attachments/assets/60086b03-0613-44c9-9872-ce291fa2190b)
 
+```R
 #pie chart of credit card transactions
 labels <- c("legit", "fraud")
 labels <- paste(labels, round(100*prop.table(table(credit_card$Class)), 2))
@@ -82,6 +109,8 @@ labels <- paste0(labels, "%")
 
 pie(table(credit_card$Class), labels, col = c("orange", "red"),
     main = "Pie chart of credit card transactions")
+```
+![image](https://github.com/user-attachments/assets/84087f35-9d86-4c68-81de-546fb872b218)
 
 # ------------------------------------------------------------
 
