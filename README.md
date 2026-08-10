@@ -1,7 +1,7 @@
 # Credit Cards Fraud Detection Analysis
 
 ## Overview 
-Credit card fraud detection is a critical issue faced by financial institutions, as fraud can lead to significant monetary losses. Using machine learning and statistical methods in R, my aims with this analysis is to detect fraudulent transactions by identifying patterns and anomalies in transaction data. The dataset was gotten from an open source website called [kaggle](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023)
+Credit card fraud detection is a critical issue faced by financial institutions around the world, as fraud can lead to significant monetary losses. Using machine learning and statistical methods in R, my aims with this analysis is to detect fraudulent transactions by identifying patterns and anomalies in transaction data. The dataset was gotten from an open source website called [kaggle](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023)
 
 ### Dataset 
 
